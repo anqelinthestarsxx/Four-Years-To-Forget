@@ -1,11 +1,11 @@
 #MCs
-define ev = Character('Eira Vale', color="#3d813d")
-define sk = Character('Headmistress Sable Korrin', color="#4046b7")
-define lr = Character('Lucian Reed', color="#b73d3d")
-define mv = Character('Mira Vexley', color="#ad3db7")
-define nh = Character('Noah Halden', color ="#3db7b7")
-define sl = Character('Seraphine Lorne', color ="#b7ad3d")
-define us = Character('UNASSIGNED', color="#FFFFFF")
+define ev = Character('Eira Vale', color="#3d813d") # Main character, the player will be playing as Eira Vale, a 16 year old girl 
+define sk = Character('Headmistress Sable Korrin', color="#4046b7") # The headmistress of Eidolon Academy, she is a strict and mysterious woman
+define lr = Character('Lucian Reed', color="#b73d3d") # Careful observer (1) calm, slightly distant, always noticing things others don’t
+define mv = Character('Mira Vexley', color="#ad3db7") # Disruptor (2) chaotic, unpredictable, sharp.. always stirring the pot. (LOL THATS SUCH A WEIRD WAY TO PUT IT)
+define nh = Character('Noah Halden', color ="#3db7b7") #"Echo" // emotional mirror (3) soft-spoken, emotionally reflective, empathetic, always there to listen and support others
+define sl = Character('Seraphine Lorne', color ="#b7ad3d") # "Anchor" (4) calm stability in chaos (reassuring, grounded, tries to keep peace between students, follows rules… but questions them privately)
+define us = Character('UNASSIGNED', color="#FFFFFF") # NULL (??) inconsistent existence.. Err0r, $ome7hin6 1$ Wr*n666
 
 #Eira's family
 define evm = Character('Mom', color="#3d813d")
