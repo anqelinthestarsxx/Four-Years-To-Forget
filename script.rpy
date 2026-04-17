@@ -22,6 +22,7 @@ define mood = 0
 define tiredness = 0
 #If tiredness drops below 5, you will become tired. If tiredness ever hits zero, you will be forced to rest.
 define health = 100
+define proc = False
 
 
 label start:
@@ -248,4 +249,146 @@ label start:
     "It's a girl's voice. Soft spoken.. likely a teenager or young adult.."
     u "Eira please.. wake up.."
     "Whoever it is on the bus with you, picks you up and carries you on their back."
+    "You try to open your eyes.. but they burn.."
+    "So, you decide to keep then closed."
+    u "I'm just taking you to the headmistress, she'll help fix your eyes and get you registered."
+    u "Today's just a move-in day for you. You'll have your own room."
+    "You can feel yourself slowly drifting to sleep.."
+
+    scene hm-office:
+        xysize(1920,1280)
+    "When you wake back up, you're in an office."
+    "There's a woman looking intently at you."
+    show headmaster
+    sk "Goodmorning, Eira."
+    sk "I want to apologize on behalf of my coworker, she forgot you were not registered."
+    sk "I'm sure you have many questions."
+    sk "Before I begin with you registration, I'd like to give you some time to ask these."
+    sk "But, there is much to discover during your time here."
+    sk "For that reason, I'll only be allowing you to ask one question today."
+    sk "Don't worry! You'll be allowed to as more later!"
+    hide headmaster
+    menu:
+        "Where am I?":
+            show eira
+            ev "Where am I right now?"
+            ev "Everything went black, and I think I passed out."
+            hide eira
+            show headmaster
+            sk "You're bright, I'll give you that."
+            sk "Your body is strong too, most would've died without protection."
+            sk "Eidolon Academy is a presigious school for the best of the best."
+            sk "You have been selected due to your academic performances as well as your potential as a holder."
+            sk "At this current moment, you are in my office."
+
+        "Who are you?":
+            show eira
+            ev "Who are you?"
+            hide eira
+            show headmaster
+            sk "My name is Headmaster Sable Korrin. Most call me Headmaster or Mrs. Korrin."
+            sk "You may call me either, or something else if you preferred."
+            sk "I'm in charge of everything from schedules, disciplinary actions, to just ensuring all students are out of their dorms each morning."
+            sk "If you need anything during your time at the academy, I'm always here to help you out"
+        "What is a holder?":
+            show eira
+            ev "What is a holder?"
+            hide eira
+            "The headmaster smiles warmly."
+            show headmaster
+            sk "Holders are humans capable of more."
+            hide headmaster
+            show eira
+            ev "More.. what?"
+            hide eira 
+            show headmaster
+            sk "Energy. Dark magic, if you will."
+            sk "You will be alongside five others around your age."
+            sk "But I believe you, my dear, will be special."
+    sk "Now, with that being said. It is time to get your registered."
+    sk "We only allow five students per level typically, but when we reviewed your file.."
+    sk "We decided it was only best to make an exception."
+    sk "You however, are now the only student who has not selected a class yet."
+    "The headmaster lays out multiple envelopes infront of you."
+    sk "Please, select one of these."
+    menu:
+        "1.":
+            sk "Beautiful choice Eira."
+            $ group = 1
+        "2.":
+            sk "Beautiful choice Eira."
+            $ group = 2
+        "3.":
+            sk "Beautiful choice Eira."
+            $ group = 3
+        "4.":
+            sk "Beautiful choice Eira."
+            $ group = 4
+        "No.":
+            "This is not optional."
+            menu:
+                "1":
+                    sk "Good."
+                    $ group = 1
+                "2":
+                    sk "Good."
+                    $ group = 2
+                "3":
+                    sk "Good."
+                    $ group = 3
+                "4":
+                    sk "Good."
+                    $ group = 4
+                "I'm not Picking.":
+                    "The headmistress frowns at you."
+                    sk "That's.. disappointing."
+                    sk "Since you decided not to pick, the choice has been made for you."
+                    sk "Good luck Eira."
+                    "Classification.. Pending."
+                    $ group = 5
+    scene black
+    "Everything goes black again."
+    "Nothing hits you this time though.."
+    "Things just go black."
+    sk "Please don't be scared, You're just being registered."
+    sk "Now, you may feel a little.. pinch."
+    "You feel like something is slicing into your arm.."
+    "But in seconds.. it's gone.."
+    "You feel normal again."
+
+    scene dorm-bed:(
+        xysize(1920,1280)
+    "When you awaken again, you're in a bed.."
+    ev "This is.. weird.."
+    "You say out loud to nobody in particular. "
+    "The room is fairly large so you decide to get up to look around."
+    
+    scene bathroom:
+        xysize(1920,1280)
+    "Your bathroom is pretty big.."
+    "It has all of the essentials, toothpaste, shampoo, conditioner, a new toothbrush..."
+    "There's a closet full of wash cloths and towels"
+    "The shower also has a bath tub.."
+    "When you look under the sick, you see everything from a blow dryer, to pads, and there's a note.."
+    "'If there's anything you want scent wise, please place an order in the kitchen! Once approved we will get it to you!'"
+    "All of this.. for free?"
+    "You then decide to walk into the final rooms."
+
+    scene kitchen:
+        xysize(1920, 1280)
+    "Outside of your bedroom, you have a kitchen."
+    "Not a massive one, of course.. but it has two rooms attached."
+    "One's a small laundry room.."
+    "The other just has little shelves.. like a pantry maybe.."
+    "You go through the different cabinets.."
+    "You find things varying from pots and pans.."
+    "To cups and plates.."
+    "There's a drawer full of knives, forks, spoons.. etc." 
+    "And there's another with a larger spoon, spatulas, tongs.."
+    "On the counter is one more note with your name on it."
+    "'Welcome to your dorm! Your key is just your handprint, you put it on the sensor to enter.'"
+    "'There's a screen on the refridgerator where you can place orders'"
+    "'It will ask you for a key to confirm, just use your handprint.'"
+    "'I hope you get settled in, and we will see you first thing tomorrow!'"
+
 return
