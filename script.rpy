@@ -13,16 +13,18 @@ define evm = Character('Mom', color="#3d813d")
 define evd = Character('Dad', color="#3d813d")
 
 #Stats
-define hunger = 10
+default hunger = 10
 # if hunger drops below 5 you will become hungy, if it is at 1 or 2 during a check, you will be starving, if it is 0, you will die.
-define group = 0
+default group = 0
 #Group 1 = Careful Observer, Group 2 = Disruptor, Group 3 = Emotional Mirror, Group 4 = Anchor, Group 5 = Null
-define mood = 0
+default mood = 0
 #0 = null, 1 = happy, 2 = annoyed, 3 = upset, 4 = tired, 5 = hungry, 6 = nervous, 7 = angry, 8 = scared
-define tiredness = 0
+default tiredness = 0
 #If tiredness drops below 5, you will become tired. If tiredness ever hits zero, you will be forced to rest.
-define health = 100
-define proc = False
+default health = 100
+default proc = False
+default food = 100 #How much food do you have at home? Eating at home removed 5 food.
+default ordered = 0 #0 is no, 1 is yes.. duh.
 
 
 label start:
@@ -180,6 +182,9 @@ label start:
         xysize(1920, 1280)
     "You get to the bus station and wait for the bus to arrive."
     "You see a few other students waiting there, but you don't recognize any of them."
+
+    scene bus:
+        xysize(1920, 1280)
     "The bus arrives and you get on, finding a seat near the back."
     "The bus is pretty empty, and you have the whole row to yourself."
     "You decide to go on your phone to pass the time, but you don't have any service."
@@ -356,7 +361,7 @@ label start:
     "But in seconds.. it's gone.."
     "You feel normal again."
 
-    scene dorm-bed:(
+    scene dorm-bed:
         xysize(1920,1280)
     "When you awaken again, you're in a bed.."
     ev "This is.. weird.."
@@ -390,5 +395,65 @@ label start:
     "'There's a screen on the refridgerator where you can place orders'"
     "'It will ask you for a key to confirm, just use your handprint.'"
     "'I hope you get settled in, and we will see you first thing tomorrow!'"
+    "Okay.. this is sort of confusing.."
+    "What do you want to order for your dorm?"
+    menu:
+        "Food":
+            "You go through the different food items they have."
+            "You decide to get some snacks."
+            "you load up the cart full of snack, treats, and energy drinks."
+            "You also decide to get some tea and juice."
+            "Then you grab supplies to make homemade pizza"
+            "As well as different meats like Chicken, Steak, and others!"
+            "The last things you get are veggies and fruits."
+            $ food = 100
 
+            "Do you want anything else?"
+
+            menu:
+                "Hygiene supplies":
+                    "You get two different soaps, as well as your favorite shampoo and conditioner.."
+                    "You also get deodorant, lotion, and body sprays.."
+                    "you don't have to pay for it so.. why not go all out i guess"
+                    "You also get a toothbrush, toothpaste, mouthwash, and floss."
+
+                    "You submit your order."
+                    $ ordered = 1
+
+                "Nothing.":
+                    "You submit your order."
+                    $ ordered = 1
+
+        "Hygiene supplies":
+            "You get two different soaps, as well as your favorite shampoo and conditioner.."
+            "You also get deodorant, lotion, and body sprays.."
+            "you don't have to pay for it so.. why not go all out i guess"
+            "You also get a toothbrush, toothpaste, mouthwash, and floss."
+
+            "Anything else?"
+            $ ordered = 1
+
+            menu:
+                "Food":
+                 "You go through the different food items they have."
+                 "You decide to get some snacks."
+                 "you load up the cart full of snack, treats, and energy drinks."
+                 "You also decide to get some tea and juice."
+                 "Then you grab supplies to make homemade pizza"
+                 "As well as different meats like Chicken, Steak, and others!"
+                 "The last things you get are veggies and fruits."
+                 $ food = 100
+
+                "You submit your order."
+
+                "Nothing.":
+                 "You submit your order."
+
+    ev "That's pretty interesting"
+    "You say to nobody in particular."
+    scene black:
+    "Hi! I'm the creator of this crazy work in progress of a game.."
+    "I'm experiencing a little bit of burnout with this project.. So i'm going to take a break from this."
+    "I promise when I come back this will be soooooo much longer !!"
+    "Thank you for supporting v0.1 of Four Years To Forget <3"
 return
